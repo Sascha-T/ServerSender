@@ -27,7 +27,7 @@ public class ServerSender {
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
         task = new Task(this.server, this.logger);
-        theTimer.scheduleAtFixedRate(task, new Date(), 10000l);
+        theTimer.scheduleAtFixedRate(task, new Date(), Config.intervalS * 1000l);
     }
     @Subscribe
     public void onProxyShutdown(ProxyShutdownEvent event) {
